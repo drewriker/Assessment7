@@ -1,0 +1,12 @@
+Results for all array sizes:
+{
+  tinyArray: { append: '162.708 μs', insert: '18.375 μs' },
+  smallArray: { append: '6.791 μs', insert: '7.375 μs' },
+  mediumArray: { append: '24.541 μs', insert: '96.542 μs' },
+  largeArray: { append: '249.209 μs', insert: '6.591084 ms' },
+  extraLargeArray: { append: '1.083625 ms', insert: '818.124583 ms' }
+}
+
+*************************
+
+Looking at the results, both functions take longer to run as the array size increases. However, doublerInsert consistently takes significantly more time compared to doublerAppend for larger arrays. This difference is due to the way each function operates. doublerAppend simply adds doubled numbers to the end of a new array, which is relatively fast regardless of array size. In contrast, doublerInsert inserts doubled numbers at the beginning of the array, requiring the entire array to be shifted each time, resulting in longer execution times, especially for larger arrays. Thus, doublerAppend scales better because its time increase is more gradual as the array size grows, making it the more efficient choice for larger datasets.
